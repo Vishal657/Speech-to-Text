@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    {%if go is None%}
+    <form method="post" action='' enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="file" name="fo1"  accept="audio/wav"required>
+        <!... accept="application/wav">
+        <input type="submit" name="Submit" value="Submit"> 
+        
+    </form>
+    <form method="post" action="">
+        {%csrf_token%}
+        <input type="submit" name="Speak" value="Speak">
+    </form>
+    {%else%}
+    <p>{{gettxt}}</p>
+    <a href={{go}} class="btn btn-primary btn-m" >download</a>
+    {%endif%}
+
+    
+</body>
+</html>
